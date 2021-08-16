@@ -38,7 +38,7 @@ def youtube_video(options):
     # Call the search.list method to retrieve results matching the specified
     # query term.
     search_response = youtube.videos().list(
-        part="snippet,player",
+        part="snippet,player,statistics",
         id=options.id
     ).execute()
 
@@ -47,7 +47,8 @@ def youtube_video(options):
     # Add each result to the appropriate list, and then display the lists of
     # matching videos, channels, and playlists.
     for search_result in search_response.get("items", []):
-        search_res_dict[search_result["snippet"]["title"]] = str(search_result["player"]["embedHtml"])
+        ins_dict = {"url" : str(search_result["player"]["embedHtml"]), "viewCount" : search_result["statistics"]["viewCount"]}
+        search_res_dict[search_result["snippet"]["title"]] = ins_dict
 
     return search_res_dict
 

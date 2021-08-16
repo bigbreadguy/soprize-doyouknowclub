@@ -31,7 +31,7 @@ def youtube_search(options):
 
     return search_res_dict
 
-def youtube_video(options):
+def youtube_video(options, URLParser):
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
         developerKey=DEVELOPER_KEY)
 
@@ -47,7 +47,9 @@ def youtube_video(options):
     # Add each result to the appropriate list, and then display the lists of
     # matching videos, channels, and playlists.
     for search_result in search_response.get("items", []):
-        ins_dict = {"url" : str(search_result["player"]["embedHtml"]), "viewCount" : search_result["statistics"]["viewCount"]}
+        URLParser.feed(str(search_result["player"]["embedHtml"]))
+        url = URLParser.src
+        ins_dict = {"url" : url, "viewCount" : search_result["statistics"]["viewCount"]}
         search_res_dict[search_result["snippet"]["title"]] = ins_dict
 
     return search_res_dict

@@ -19,7 +19,9 @@
  conda install -c conda-forge dlib
  ```
  
- 을 살포시 입력해주시기 바랍니다.</br>
+ 을 살포시 입력해주시기 바랍니다.
+ 
+ </br>
 
 ### 2. Youtube Data API 키 생성 및 secret 파일 만들기
  [Youtube Data API 안내 페이지](https://developers.google.com/youtube/v3/getting-started?hl=ko)의 설명을 따라 API 키를 발급받으세요.</br>

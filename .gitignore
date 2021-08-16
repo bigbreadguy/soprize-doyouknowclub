@@ -115,4 +115,6 @@ dmypy.json
 
 # Others
 .test/
+.idea/
+downloads/
 secret.py

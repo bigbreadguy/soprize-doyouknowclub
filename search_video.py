@@ -1,6 +1,5 @@
 from util import *
 import secret
-import glob
 
 def try_search(args, DEVELOPER_KEY):
     try:

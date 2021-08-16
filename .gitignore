@@ -115,4 +115,4 @@ dmypy.json
 
 # Others
 .test/
-.secret.py
+secret.py

@@ -13,9 +13,11 @@
  </br>
  저의 경우에는 dlib도 설치했는데, 윈도에서 pip install로 dlib을 설치하기는 상당히 귀찮기 때문에</br>
  dlib을 설치하시려는 분들께서는 [Anaconda](https://www.anaconda.com/)를 설치하신 후</br>
+ 
  ```
  conda install -c conda-forge dlib
  ```
+ 
  </br>
  을 살포시 입력해주시기 바랍니다.
 

@@ -1,5 +1,6 @@
 from util import *
 import secret
+import tqdm
 
 def try_search(args, DEVELOPER_KEY):
     try:
@@ -30,6 +31,6 @@ if __name__ == "__main__":
     argparser.add_argument("--page-token", help="nextPageToken or prevPageToken", default="nextPageToken")
     args = argparser.parse_args()
 
-    for query_ in queries:
+    for query_ in tqdm.tqdm(queries):
         args.q = query_
         try_search(args, DEVELOPER_KEY)

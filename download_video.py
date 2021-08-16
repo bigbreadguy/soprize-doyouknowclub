@@ -30,11 +30,14 @@ if __name__ == "__main__":
 
     quo = len(search_results) // 50
     rem = len(search_results) % 50
+    
+    print(f"Loading Total {len(search_results)} Videos")
 
     ids_in_chunk = []
-    for i in range(quo):
+    for i in range(quo+1):
         from_ = i * 50
-        to_ = (i + 1) * 50 if not i==quo-1 else i * 50 + rem
+        to_ = i * 50 + rem if i==quo else (i + 1) * 50
+        print(f"Processing Video No.{from_ + 1} to No.{to_}")
         ids = ",".join(list(search_results.values())[from_:to_])
         ids_in_chunk.append(ids)
 
@@ -44,7 +47,7 @@ if __name__ == "__main__":
 
     parser = URLParser()
     
-    for i in range(quo):
+    for i in range(quo+1):
         args.ids = ids_in_chunk[i]
         try:
             videos_results = youtube_video(args, parser, DEVELOPER_KEY)

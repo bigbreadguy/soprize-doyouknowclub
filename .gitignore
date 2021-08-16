@@ -116,7 +116,9 @@ dmypy.json
 # Others
 .test/
 .idea/
+dlib-19.22.1/
 downloads/
 result/extracted_frames/
+result/face_crop/
 secret.py
 *.json

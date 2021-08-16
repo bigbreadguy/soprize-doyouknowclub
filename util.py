@@ -7,6 +7,8 @@ from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.tools import argparser
 
+import pytube
+
 def youtube_search(options):
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
         developerKey=DEVELOPER_KEY)
@@ -53,6 +55,14 @@ def youtube_video(options, URLParser):
         search_res_dict[search_result["snippet"]["title"]] = ins_dict
 
     return search_res_dict
+
+def download(url, save_dir):
+    yt = pytube.YouTube(url)
+
+    videos = yt.streams.filter(progressive=True, file_extension="mp4")\
+                .order_by("resolution")
+
+    videos[0].download(save_dir)
 
 class URLParser(HTMLParser):
     def __init__(self):

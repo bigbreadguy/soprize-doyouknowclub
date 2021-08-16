@@ -117,5 +117,6 @@ dmypy.json
 .test/
 .idea/
 downloads/
+result/extracted_frames/
 secret.py
 *.json

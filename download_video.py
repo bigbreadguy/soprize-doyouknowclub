@@ -48,7 +48,7 @@ if __name__ == "__main__":
     parser = URLParser()
     
     for i in range(quo+1):
-        args.ids = ids_in_chunk[i]
+        args.id = ids_in_chunk[i]
         try:
             videos_results = youtube_video(args, parser, DEVELOPER_KEY)
             with open(os.path.join(save_dir, f"videos_results_{i}.json"), 'w', encoding = "UTF-8-SIG") as file_out:

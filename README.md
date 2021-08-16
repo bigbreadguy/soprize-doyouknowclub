@@ -21,8 +21,8 @@
 
 ### 2. Youtube Data API 키 생성 및 secret 파일 만들기
  [Youtube Data API 안내 페이지](https://developers.google.com/youtube/v3/getting-started?hl=ko)의 설명을 따라 API 키를 발급받으세요.</br>
- API 키를 안전하게 입력하는 방법은 아주 많지만 저의 경우에는 무지성으로 secret.py 파일을 만들어</br>
- 입력하는 방법을 선택했습니다.</br>
+ API 키를 안전하게 입력하는 방법은 아주 많지만 저의 경우에는</br>
+ 무지성으로 secret.py 파일을 만들어 입력하는 방법을 선택했습니다.</br>
  secret.py는 .gitignore에 포함되어 있으니 git push를 통해 업로드되는 불상사는 막을 수 있습니다.</br>
  secret.py를 README.md와 같은 경로에 새로 추가하고 아래의 형식으로 API 키를 입력해주세요.</br>
  ```

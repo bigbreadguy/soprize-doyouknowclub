@@ -58,14 +58,20 @@
  </br>
  경로를 입력하실때 []은 제외하시면 됩니다.</br>
  stylegan-encoder와 이 리포지토리가 같은 경로에 설치되있을 시의 예시</br>
+ 
  *windows:*</br>
+ 
  ```
  python align_image.py ..\soprize-season11-doyouknowclub\result\extracted_frames ..\soprize-season11-doyouknowclub\result\face_crop
- ```</br>
+ ```
+ </br>
+
  *mac/linux:*</br>
+ 
  ```
  python align_image.py ../soprize-season11-doyouknowclub/result/extracted_frames ../soprize-season11-doyouknowclub/result/face_crop
  ```
+ 
  </br>
 
  **5단계**</br>

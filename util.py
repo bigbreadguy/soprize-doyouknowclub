@@ -9,9 +9,12 @@ from oauth2client.tools import argparser
 
 import pytube
 
-def youtube_search(options):
+YOUTUBE_API_SERVICE_NAME = "youtube"
+YOUTUBE_API_VERSION = "v3"
+
+def youtube_search(options, api_key):
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
-        developerKey=DEVELOPER_KEY)
+        developerKey=api_key)
 
     # Call the search.list method to retrieve results matching the specified
     # query term.
@@ -33,9 +36,9 @@ def youtube_search(options):
 
     return search_res_dict
 
-def youtube_video(options, URLParser):
+def youtube_video(options, URLParser, api_key):
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
-        developerKey=DEVELOPER_KEY)
+        developerKey=api_key)
 
     # Call the search.list method to retrieve results matching the specified
     # query term.
@@ -56,7 +59,7 @@ def youtube_video(options, URLParser):
 
     return search_res_dict
 
-def download(url, save_dir):
+def download(url, save_dir : str):
     yt = pytube.YouTube(url)
 
     videos = yt.streams.filter(progressive=True, file_extension="mp4")\

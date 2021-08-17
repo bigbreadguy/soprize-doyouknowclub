@@ -122,5 +122,6 @@ result/extracted_frames/
 result/face_crop/
 result/analyzed/
 result/.dump/
+result/represent/
 secret.py
 *.json

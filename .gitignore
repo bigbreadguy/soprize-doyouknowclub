@@ -113,9 +113,11 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Pycharm Editor Temp
+.idea/
+
 # Others
 .test/
-.idea/
 dlib-19.22.1/
 downloads/
 result/extracted_frames/

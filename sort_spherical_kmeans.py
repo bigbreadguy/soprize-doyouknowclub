@@ -18,13 +18,16 @@ if __name__ == "__main__":
     anlz_dir = os.path.join(result_dir, "analyzed")
     dump_dir = os.path.join(result_dir, ".dump")
     info_dir = os.path.join(result_dir, "video_url")
+    plot_dir = os.path.join(result_dir, "figures")
+    if not os.path.exists(plot_dir):
+        os.mkdir(plot_dir)
     
     repr_array = np.load(os.path.join(repr_dir, "representation.npy"))
     repr_spars = sparse.csr_matrix(repr_array)
 
     s_kmeans =  SphericalKMeans(
         n_clusters=1000,
-        max_iter=10,
+        max_iter=100,
         verbose=1,
         init="similar_cut",
         sparsity="minimum_df",
@@ -39,6 +42,7 @@ if __name__ == "__main__":
 
     plt.scatter(repr_2d_pjt[:,0], repr_2d_pjt[:,1], c=labels/1000, alpha=0.5)
     plt.show()
+    plt.savefig(os.path.join(plot_dir, "skmeans_pca_scatter.png"), dpi=300)
 
     with open(os.path.join(repr_dir, "repr_clustered.npy"), "wb") as file_out:
         np.save(file_out, labels)
@@ -48,8 +52,9 @@ if __name__ == "__main__":
     except NameError:
         labels = np.load(os.path.join(repr_dir, "repr_clustered.npy"))
 
-    plt.hist(labels, bins=1000)
-    plt.show()
+    plt1.hist(labels, bins=1000)
+    plt1.show()
+    plt1.savefig(os.path.join(plot_dir, "skmeans_histogram.png"), dpi=300)
 
     sort_dir = os.path.join(result_dir, "sorted")
     if not os.path.exists(sort_dir):

@@ -51,7 +51,7 @@ if __name__ == "__main__":
     res_dict = {}
     for fil in tqdm.tqdm(images_filtered):
         key = os.path.basename(fil).split(".")[0]
-        resp_obj = DeepFace.represent(fil, detector_backend = "dlib")
+        resp_obj = DeepFace.analyze(fil, detector_backend = "dlib")
         res_dict[key] = resp_obj
 
     with open(os.path.join(save_dir, "analysis_result.json"), "w", encoding = "UTF-8-SIG") as file_out:

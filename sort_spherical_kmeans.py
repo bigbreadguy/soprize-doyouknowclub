@@ -13,7 +13,7 @@ from sklearn.decomposition import PCA
 
 if __name__ == "__main__":
     cwd = os.getcwd()
-    result_dir = os.path.join(cwd, "../", "result")
+    result_dir = os.path.join(cwd, "result")
     repr_dir = os.path.join(result_dir, "represent")
     anlz_dir = os.path.join(result_dir, "analyzed")
     dump_dir = os.path.join(result_dir, ".dump")

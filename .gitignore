@@ -125,5 +125,6 @@ result/face_crop/
 result/analyzed/
 result/.dump/
 result/represent/
+result/sorted/
 secret.py
 *.json

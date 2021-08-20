@@ -25,6 +25,7 @@ if __name__ == "__main__":
     repr_array = np.load(os.path.join(repr_dir, "representation.npy"))
     repr_spars = sparse.csr_matrix(repr_array)
 
+    """
     s_kmeans =  SphericalKMeans(
         n_clusters=1000,
         max_iter=100,
@@ -36,25 +37,27 @@ if __name__ == "__main__":
 
     labels = s_kmeans.fit_predict(repr_spars)
 
-    pca_2d = PCA(n_components=2)
-
-    repr_2d_pjt = pca_2d.fit_transform(repr_array)
-
-    plt.scatter(repr_2d_pjt[:,0], repr_2d_pjt[:,1], c=labels/1000, alpha=0.5)
-    plt.show()
-    plt.savefig(os.path.join(plot_dir, "skmeans_pca_scatter.png"), dpi=300)
-
     with open(os.path.join(repr_dir, "repr_clustered.npy"), "wb") as file_out:
         np.save(file_out, labels)
+    """
 
     try:
         labels
     except NameError:
         labels = np.load(os.path.join(repr_dir, "repr_clustered.npy"))
 
-    plt1.hist(labels, bins=1000)
-    plt1.show()
-    plt1.savefig(os.path.join(plot_dir, "skmeans_histogram.png"), dpi=300)
+
+    pca_2d = PCA(n_components=2)
+
+    repr_2d_pjt = pca_2d.fit_transform(repr_array)
+
+    plt.scatter(repr_2d_pjt[:,0], repr_2d_pjt[:,1], c=labels/1000, alpha=0.5)
+    #plt.show()
+    plt.savefig(os.path.join(plot_dir, "skmeans_pca_scatter.png"), dpi=300)
+
+    plt.hist(labels, bins=1000)
+    #plt.show()
+    plt.savefig(os.path.join(plot_dir, "skmeans_histogram.png"), dpi=300)
 
     sort_dir = os.path.join(result_dir, "sorted")
     if not os.path.exists(sort_dir):

@@ -25,10 +25,9 @@ if __name__ == "__main__":
     repr_array = np.load(os.path.join(repr_dir, "representation.npy"))
     repr_spars = sparse.csr_matrix(repr_array)
 
-    """
     s_kmeans =  SphericalKMeans(
         n_clusters=1000,
-        max_iter=100,
+        max_iter=10,
         verbose=1,
         init="similar_cut",
         sparsity="minimum_df",
@@ -39,7 +38,6 @@ if __name__ == "__main__":
 
     with open(os.path.join(repr_dir, "repr_clustered.npy"), "wb") as file_out:
         np.save(file_out, labels)
-    """
 
     try:
         labels

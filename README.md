@@ -1,7 +1,7 @@
 # soprize season11 doyouknowclub
 
 ## 소개
- 소프라이즈 시즌 11 [한국에 '리액션' 하고 있는 이들은 누구인가요?](https://soprize.so/question/90)에 대한</br>
+ 소프라이즈 시즌 11 [한국에 '리액션' 하고 있는 이들은 누구인가요?](https://alook.so/posts/NG1t8M)에 대한</br>
  답변을 작성하기 위한 데이터 수집/가공/분석 과정을 공개하는 리포지토리입니다.
  
  </br>

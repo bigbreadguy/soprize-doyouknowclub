@@ -60,12 +60,14 @@
  추출된 프레임에서 사람 얼굴을 crop해야 합니다. 저의 경우에는 [StyleGAN-Encoder](https://github.com/pbaylies/stylegan-encoder)를 활용했습니다.</br>
  **stylegan-encoder**를 활용하실 경우에는 **dlib 설치가 필요**합니다.</br>
  stylegan-encoder를 새로운 경로에서 clone하신 뒤 해당 폴더에서</br>
+ 
  ```
  python align_image.py [extracted_frames까지의 경로] [result폴더까지의 경로 + face_crop]
  ```
  </br>
  경로를 입력하실때 []은 제외하시면 됩니다.</br>
  stylegan-encoder와 이 리포지토리가 같은 경로에 설치되있을 시의 예시</br>
+ 
  
  *windows:*</br>
  
@@ -83,4 +85,17 @@
  </br>
 
  **5단계**</br>
- 작성중...
+ 크롭된 얼굴 사진을 같은 인물별로 군집화해야합니다. 이를 위해 각 얼굴 이미지의 Representational Vector를 Spherical K-means로 군집화해보려</br>
+ 시도했으나 실패했고, 결국 Adobe Lightroom의 인물별 정렬 기능을 활용해 분류했습니다. 군집화된 결과는 리포지토리에 포함했습니다.</br>
+ 
+ </br>
+ 
+ **6단계**</br>
+ ```
+ python preprocess_images.py
+ ```
+ 
+ </br>
+ 
+ **7단계**</br>
+ jupyter notebook을 실행하고 indivisual_analysis.ipynb를 따라 데이터 분석/시각화를 하시면 됩니다.

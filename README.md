@@ -66,7 +66,7 @@
  ```
  </br>
  경로를 입력하실때 []은 제외하시면 됩니다.</br>
- stylegan-encoder와 이 리포지토리가 같은 경로에 설치되있을 시의 예시</br>
+ stylegan-encoder와 이 리포지토리가 같은 경로에 설치돼있을 시의 예시</br>
  
  
  *windows:*</br>
